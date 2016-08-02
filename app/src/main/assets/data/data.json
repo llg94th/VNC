@@ -1,0 +1,20 @@
+{
+   "isSuccessful": true,
+   "resultSet": [
+      {
+         "class": "MOB11151",
+         "id": "PH04037",
+         "name": "Lê Văn Nam"
+      },
+      {
+         "class": "PT11151",
+         "id": "PH04071",
+         "name": "Mầu Hồng Phi"
+      },
+      {
+         "class": "MOB11105",
+         "id": "PH04073",
+         "name": "Nguyễn Tuấn Hùng"
+      }
+   ]
+}
