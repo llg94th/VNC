@@ -7,9 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import com.example.ngoc.vncgiaohngpro.R;
 import com.example.ngoc.vncgiaohngpro.gcm.RegistrationIntentService;
+import com.example.ngoc.vncgiaohngpro.objects.VNCNotification;
 
 public class ShippingActivity extends AppCompatActivity {
 
@@ -24,5 +26,7 @@ public class ShippingActivity extends AppCompatActivity {
         mweb.loadUrl("file:///android_asset/www/index.html");
         mweb.setClickable(false);
         mweb.setLongClickable(false);
+
+        Toast.makeText(ShippingActivity.this, VNCNotification.getListNotiFromSever(ShippingActivity.this).size()+"", Toast.LENGTH_SHORT).show();
     }
 }
