@@ -14,7 +14,7 @@
             android:id="@+id/tvArea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phúc la"
+            android:text="Phúc la  "
             android:textAllCaps="true"
             android:textStyle="bold" />
         <LinearLayout
