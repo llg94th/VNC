@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".views.ShippingActivity">
+    tools:context=".views.WebViewNotificationActivity">
     <include layout="@layout/toobar"></include>
     <WebView
         android:id="@+id/myweb"
