@@ -26,7 +26,7 @@ public class WMService extends Service {
     private WindowManager windowManager;
     private View view, view2;
     private WindowManager.LayoutParams params, params2;
-    private boolean isShown,isMove;
+    private boolean isShown, isMove;
 
     @Nullable
     @Override
@@ -42,13 +42,7 @@ public class WMService extends Service {
         isShown = false;
         view = LayoutInflater.from(this).inflate(R.layout.item_chathead, null);
         view2 = LayoutInflater.from(this).inflate(R.layout.item_notification, null);
-        view2.setBackgroundColor(Color.GREEN);
-        final ImageView img = (ImageView) view.findViewById(R.id.imgchat);
-        TextDrawable drawable = TextDrawable.builder()
-                .beginConfig()
-                .withBorder(4).bold().fontSize(32) /* thickness in px */
-                .endConfig().buildRound("VNC", Color.BLUE);
-        img.setImageDrawable(drawable);
+        view2.setBackgroundColor(Color.BLUE);
 //        chatHead = new ImageView(this);
 //        chatHead.setImageResource(R.drawable.ic_vnc_logo);
 
@@ -64,12 +58,10 @@ public class WMService extends Service {
                 WindowManager.LayoutParams.TYPE_SYSTEM_ERROR,
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSLUCENT);
-
-        params.gravity = Gravity.TOP | Gravity.LEFT;
-        params2.gravity = Gravity.TOP | Gravity.LEFT;
+        params.gravity = Gravity.TOP | Gravity.START;
+        params2.gravity = Gravity.TOP | Gravity.START;
         params.x = 0;
         params.y = 100;
-
         windowManager.addView(view, params);
 
         view.setOnTouchListener(new View.OnTouchListener() {
@@ -86,20 +78,21 @@ public class WMService extends Service {
                         initialY = params.y;
                         initialTouchX = event.getRawX();
                         initialTouchY = event.getRawY();
-                        view.setAlpha(0.5f);
+                        params.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+                        params.dimAmount = 0.7f;
                         windowManager.updateViewLayout(view, params);
                         isMove = false;
                         return true;
                     case MotionEvent.ACTION_UP:
-                        view.setAlpha(1.0f);
-                        windowManager.updateViewLayout(view, params);
-                        if (!isMove){
-                            if (isShown){
+                        params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+                        windowManager.updateViewLayout(view, params);;
+                        if (!isMove) {
+                            if (isShown) {
                                 if (view2 != null) windowManager.removeView(view2);
                                 isShown = false;
-                            }else {
-                                params2.x = params.x;
-                                params2.y = params.y +view.getHeight();
+                            } else {
+                                params2.x = params.x - view2.getWidth();
+                                params2.y = params.y + view.getHeight();
                                 windowManager.addView(view2, params2);
                                 isShown = true;
                             }
@@ -110,9 +103,9 @@ public class WMService extends Service {
                         params.x = initialX + (int) (event.getRawX() - initialTouchX);
                         params.y = initialY + (int) (event.getRawY() - initialTouchY);
 
-                        if (isShown){
-                            params2.x = params.x;
-                            params2.y = params.y +view.getHeight();
+                        if (isShown) {
+                            params2.x = params.x - view2.getWidth();
+                            params2.y = params.y + view.getHeight();
                             windowManager.updateViewLayout(view2, params2);
                         }
                         windowManager.updateViewLayout(view, params);

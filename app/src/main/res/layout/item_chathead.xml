@@ -5,10 +5,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <ImageView
+    <com.pkmmte.view.CircularImageView
         android:id="@+id/imgchat"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@android:drawable/ic_dialog_alert"
+        android:src="@drawable/vnc_logo_new"
+        app:border="true"
+        app:border_width="4dp"
+        app:shadow="true"
         />
 </LinearLayout>
