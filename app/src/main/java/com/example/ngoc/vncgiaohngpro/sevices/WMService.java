@@ -24,8 +24,9 @@ import com.pkmmte.view.CircularImageView;
 public class WMService extends Service {
 
     private WindowManager windowManager;
-    private View view;
-    private WindowManager.LayoutParams params;
+    private View view, view2;
+    private WindowManager.LayoutParams params, params2;
+    private boolean isShown,isMove;
 
     @Nullable
     @Override
@@ -38,9 +39,11 @@ public class WMService extends Service {
         super.onCreate();
         Log.d("MY_TAG", "WMService: onCreate()");
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
-
+        isShown = false;
         view = LayoutInflater.from(this).inflate(R.layout.item_chathead, null);
-        ImageView img = (ImageView) view.findViewById(R.id.imgchat);
+        view2 = LayoutInflater.from(this).inflate(R.layout.item_notification, null);
+        view2.setBackgroundColor(Color.GREEN);
+        final ImageView img = (ImageView) view.findViewById(R.id.imgchat);
         TextDrawable drawable = TextDrawable.builder()
                 .beginConfig()
                 .withBorder(4).bold().fontSize(32) /* thickness in px */
@@ -52,11 +55,18 @@ public class WMService extends Service {
         params = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.TYPE_PHONE,
+                WindowManager.LayoutParams.TYPE_SYSTEM_ERROR,
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                PixelFormat.TRANSLUCENT);
+        params2 = new WindowManager.LayoutParams(
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                WindowManager.LayoutParams.TYPE_SYSTEM_ERROR,
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSLUCENT);
 
         params.gravity = Gravity.TOP | Gravity.LEFT;
+        params2.gravity = Gravity.TOP | Gravity.LEFT;
         params.x = 0;
         params.y = 100;
 
@@ -78,15 +88,36 @@ public class WMService extends Service {
                         initialTouchY = event.getRawY();
                         view.setAlpha(0.5f);
                         windowManager.updateViewLayout(view, params);
+                        isMove = false;
                         return true;
                     case MotionEvent.ACTION_UP:
                         view.setAlpha(1.0f);
                         windowManager.updateViewLayout(view, params);
+                        if (!isMove){
+                            if (isShown){
+                                if (view2 != null) windowManager.removeView(view2);
+                                isShown = false;
+                            }else {
+                                params2.x = params.x;
+                                params2.y = params.y +view.getHeight();
+                                windowManager.addView(view2, params2);
+                                isShown = true;
+                            }
+                        }
                         return true;
                     case MotionEvent.ACTION_MOVE:
+                        isMove = true;
                         params.x = initialX + (int) (event.getRawX() - initialTouchX);
                         params.y = initialY + (int) (event.getRawY() - initialTouchY);
+
+                        if (isShown){
+                            params2.x = params.x;
+                            params2.y = params.y +view.getHeight();
+                            windowManager.updateViewLayout(view2, params2);
+                        }
                         windowManager.updateViewLayout(view, params);
+
+                        Log.d("MY_TAG", "(x,y) = (" + params.x + "," + params.y + ")");
                         return true;
                 }
                 return false;
