@@ -33,9 +33,14 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <service
+            android:name=".sevices.WMService"
+            android:exported="false" />
 
-        <activity android:name=".views.WebViewNotificationActivity"
-            android:parentActivityName=".views.NotificationActivity"/>
+        <activity
+            android:name=".views.WebViewNotificationActivity"
+            android:parentActivityName=".views.NotificationActivity" />
     </application>
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 </manifest>

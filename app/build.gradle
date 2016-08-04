@@ -27,4 +27,5 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:9.0.0'
     compile 'com.koushikdutta.ion:ion:2.1.8'
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    compile 'com.pkmmte.view:circularimageview:1.1'
 }
