@@ -1,33 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:orientation="vertical">
 
-    <include layout="@layout/toobar"></include>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/login_form_margin_top"
+        android:paddingBottom="16dp"
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/edt_account"
+            android:id="@+id/edt_id"
             style="@style/EditText_Login"
-            android:hint="Tài Khoản"/>
+            android:hint="Tài Khoản" />
 
         <EditText
             android:id="@+id/edt_password"
             style="@style/EditText_Login"
-            android:hint="Mật khẩu"
-            />
+            android:hint="Mật Khẩu"
+            android:inputType="textPassword" />
+
         <Button
             android:id="@+id/btn_login"
             style="@style/Button_Login"
             android:text="Đăng Nhập" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:id="@+id/tv_Register"
+            style="@style/TextviewRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chưa có tài khoản? đăng ký!" />
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

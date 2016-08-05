@@ -7,8 +7,10 @@
     <dimen name="login_edittext_padding">20dp</dimen>
     <dimen name="login_form_margin_top">64dp</dimen>
     <dimen name="textsize">18sp</dimen>
+    <dimen name="textsizeRes">20sp</dimen>
     <dimen name="textsizeSmall">12sp</dimen>
     <dimen name="textsizeBig">24sp</dimen>
+    <dimen name="marginRegister">64dp</dimen>
     <dimen name="progcessBar">72dp</dimen>
 
 </resources>

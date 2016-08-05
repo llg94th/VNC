@@ -33,7 +33,26 @@
         <style name="Button_Login" parent="EditText_Login">
             <item name="android:background">@drawable/buttonloginstyle</item>
             <item name="android:layout_gravity">center</item>
-            <item name="android:textColor">@color/colorAccent</item>
-
+            <item name="android:textColor">@color/colortext</item>
         </style>
+    <style name="TextviewRegister" >
+        <item name="android:textColor">@color/colortext</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">@dimen/textsizeRes</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:padding">8dp</item>
+
+
+        <!--<item name="android:textStyle">bold</item>-->
+    </style>
+    <style name="Register">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:text">CHƯA LÀ THÀNH VIÊN</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:padding">32dp</item>
+    </style>
+    <style name="ButtonSignUp">
+        <item name="android:background">@drawable/editextstyle</item>
+    </style>
     </resources>
