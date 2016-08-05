@@ -55,4 +55,7 @@
     <style name="ButtonSignUp">
         <item name="android:background">@drawable/editextstyle</item>
     </style>
+    <style name="TestAnimation">
+        <item name="android:windowEnterAnimation">@anim/enter</item>
+    </style>
     </resources>

@@ -41,7 +41,7 @@ public class WMService extends Service {
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         isShown = false;
         view = LayoutInflater.from(this).inflate(R.layout.item_chathead, null);
-        view2 = LayoutInflater.from(this).inflate(R.layout.item_notification, null);
+        view2 = LayoutInflater.from(this).inflate(R.layout.item_notification_test, null);
         view2.setBackgroundColor(Color.BLUE);
 //        chatHead = new ImageView(this);
 //        chatHead.setImageResource(R.drawable.ic_vnc_logo);
@@ -60,6 +60,7 @@ public class WMService extends Service {
                 PixelFormat.TRANSLUCENT);
         params.gravity = Gravity.TOP | Gravity.START;
         params2.gravity = Gravity.TOP | Gravity.START;
+        params2.windowAnimations = R.style.TestAnimation;
         params.x = 0;
         params.y = 100;
         windowManager.addView(view, params);

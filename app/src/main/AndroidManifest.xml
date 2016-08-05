@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
-        <activity android:name=".views.LoginActivity">
+        <activity android:name=".views.NotificationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
