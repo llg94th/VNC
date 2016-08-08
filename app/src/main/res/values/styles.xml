@@ -57,6 +57,7 @@
     </style>
     <style name="TestAnimation">
         <item name="android:windowEnterAnimation">@anim/enter</item>
+        <item name="android:windowExitAnimation">@anim/exit</item>
     </style>
     <style name="Text.Item" parent="TextAppearance.AppCompat.Small">
         <!--<item name="android:layout_centerVertical">true</item>-->
