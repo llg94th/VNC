@@ -58,4 +58,16 @@
     <style name="TestAnimation">
         <item name="android:windowEnterAnimation">@anim/enter</item>
     </style>
+    <style name="Text.Item" parent="TextAppearance.AppCompat.Small">
+        <!--<item name="android:layout_centerVertical">true</item>-->
+        <item name="android:textColor">@color/colortextblack</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--<item name="android:fontFamily">serif-monospace</item>-->
+
+    </style>
+    <style name="Text.item.position" parent="Text.Item">
+        <item name="android:textColor">@color/divider</item>
+    </style>
     </resources>

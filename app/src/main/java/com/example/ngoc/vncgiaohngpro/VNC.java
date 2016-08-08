@@ -12,6 +12,7 @@ public class VNC {
     public final static String API_GET_NOTI_BY_ID = "localhost/VNCCapital/notification/template.php?noti_id=";
     public final static String API_LOGIN = "http://192.168.1.182/vncapital/login.php?id=";
     public final static String API_SENDTOKEN = "http://192.168.1.182/vncapital/SetToken.php?id=";
+    public final static String API_GETCONTACT = "http://192.168.1.182/vncapital/getContact.php";
     public static String convertTimeToString(long time){
         Calendar calendar = Calendar.getInstance();
         calendar.clear();

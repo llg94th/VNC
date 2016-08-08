@@ -12,5 +12,7 @@
     <dimen name="textsizeBig">24sp</dimen>
     <dimen name="marginRegister">64dp</dimen>
     <dimen name="progcessBar">72dp</dimen>
+    <dimen name="padding_item">8dp</dimen>
+    <dimen name="WidthTextDrawer">48dp</dimen>
 
 </resources>

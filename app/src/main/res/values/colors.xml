@@ -7,8 +7,9 @@
     <color name="navigationBarColor">#FFFFFF</color>
     <color name="colorAccent">#8BC34A</color>
     <color name="colortext">#FFFFFF</color>
+    <color name="colortextblack">#000</color>
     <color name="colorHintEditext">#BDBDBD</color>
     <color name="colorLoginButton">#66BB6A</color>
-    <color name="divider">#FAFAFA</color>
+    <color name="divider">#9E9E9E</color>
 </resources>
 

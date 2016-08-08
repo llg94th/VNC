@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_item">
+
+    <ImageView
+        android:id="@+id/img_nameContact"
+        android:layout_width="@dimen/WidthTextDrawer"
+        android:layout_height="@dimen/WidthTextDrawer"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:layout_marginTop="4dp"
+        android:id="@+id/tv_name"
+        style="@style/Text.Item"
+        android:layout_marginLeft="8dp"
+        android:text="Mầu Hồng Phi"
+        android:layout_toEndOf="@+id/img_nameContact" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="giám đốc"
+        android:id="@+id/tv_position"
+        android:layout_below="@+id/tv_name"
+        android:layout_alignStart="@+id/tv_name" />
+
+    <ImageView
+        android:id="@+id/img_call"
+        style="@style/Text.item.position"
+        android:src="@android:drawable/sym_action_call"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+</RelativeLayout>

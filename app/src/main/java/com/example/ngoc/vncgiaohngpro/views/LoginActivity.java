@@ -37,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
     private LoginPreference preference;
     private TextView tv_Register;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (success == 1) {
                             Log.d("LOGIN :", success + "1111");
                             sendTokent(id);
-                            Intent i = new Intent(LoginActivity.this, Testlv.class);
+                            Intent i = new Intent(LoginActivity.this, ContactActivity.class);
                             startActivity(i);
                             preference.setLogin(new Account(id,password));
                         } else if (success == 0) {
@@ -104,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void sendTokent(String id) {
-        if (!preference.isFirstLogined()){
+        if (preference.isFirstLogined()){
             Log.d("sendTokent","1");
             Intent intent = new Intent(this, RegistrationIntentService.class);
             intent.putExtra("id",id);
