@@ -23,6 +23,7 @@ import com.example.ngoc.vncgiaohngpro.R;
 import com.example.ngoc.vncgiaohngpro.VNC;
 import com.example.ngoc.vncgiaohngpro.adapters.ContactAdapter;
 import com.example.ngoc.vncgiaohngpro.databases.VNCDatabase;
+import com.example.ngoc.vncgiaohngpro.databases.VNContactDatabase;
 import com.example.ngoc.vncgiaohngpro.objects.VNCContact;
 import com.example.ngoc.vncgiaohngpro.preference.LoginPreference;
 import com.koushikdutta.async.future.FutureCallback;
@@ -38,7 +39,7 @@ public class ContactActivity extends AppCompatActivity {
     private LoginPreference preference;
     private Button btn_Update;
     private Toolbar toolbar;
-    private VNCDatabase database;
+    private VNContactDatabase database;
     private ContactAdapter adapter;
     private ArrayList<VNCContact> list;
     private ListView lv_Contact;
@@ -66,7 +67,7 @@ public class ContactActivity extends AppCompatActivity {
         preference = new LoginPreference(getBaseContext());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         lv_Contact = (ListView) findViewById(R.id.lv_Contact);
-        database = new VNCDatabase(getBaseContext());
+        database = new VNContactDatabase(getBaseContext());
         list = new ArrayList<>();
         list = database.getAllContact();
         adapter = new ContactAdapter(getBaseContext(),0,list);
