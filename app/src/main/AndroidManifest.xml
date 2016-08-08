@@ -46,7 +46,7 @@
             android:parentActivityName=".views.NotificationActivity" />
         <activity android:name=".views.Testlv" />
         <activity
-            android:name=".SignupActivity"
+            android:name=".views.SignupActivity"
             android:parentActivityName=".views.LoginActivity" />
         <activity android:name=".views.ContactActivity" android:parentActivityName=".views.LoginActivity"></activity>
     </application>

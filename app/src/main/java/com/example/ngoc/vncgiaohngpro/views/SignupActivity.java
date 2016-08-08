@@ -1,8 +1,10 @@
-package com.example.ngoc.vncgiaohngpro;
+package com.example.ngoc.vncgiaohngpro.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+
+import com.example.ngoc.vncgiaohngpro.R;
 
 public class SignupActivity extends AppCompatActivity {
     private Toolbar toolbar;
