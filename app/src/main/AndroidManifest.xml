@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
-        <activity android:name=".views.LoginActivity">
+        <activity android:name=".views.WebViewNotificationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,10 +40,6 @@
         <service
             android:name=".sevices.WMService"
             android:exported="false" />
-
-        <activity
-            android:name=".views.WebViewNotificationActivity"
-            android:parentActivityName=".views.NotificationActivity" />
         <activity android:name=".views.Testlv" />
         <activity
             android:name=".views.SignupActivity"
