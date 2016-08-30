@@ -18,6 +18,8 @@ import com.example.ngoc.vncgiaohngpro.VNC;
 import com.example.ngoc.vncgiaohngpro.gcm.RegistrationIntentService;
 import com.example.ngoc.vncgiaohngpro.objects.Account;
 import com.example.ngoc.vncgiaohngpro.preference.LoginPreference;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.crash.FirebaseCrash;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
@@ -122,6 +124,9 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setCancelable(false);
         preference = new LoginPreference(getBaseContext());
         apiLogin = VNC.API_LOGIN;
-
+        setUpFirebaseCrashReporting();
+    }
+    private void setUpFirebaseCrashReporting(){
+        FirebaseCrash.report(new Exception("New Exeption"));
     }
 }

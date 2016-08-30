@@ -13,7 +13,6 @@ import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
 import com.example.ngoc.vncgiaohngpro.R;
 import com.example.ngoc.vncgiaohngpro.VNC;
-import com.example.ngoc.vncgiaohngpro.objects.VNCBills;
 import com.example.ngoc.vncgiaohngpro.objects.VNCNotification;
 import com.example.ngoc.vncgiaohngpro.views.WebViewNotificationActivity;
 

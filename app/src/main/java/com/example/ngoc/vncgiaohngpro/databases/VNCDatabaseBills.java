@@ -2,21 +2,15 @@ package com.example.ngoc.vncgiaohngpro.databases;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
-import com.example.ngoc.vncgiaohngpro.objects.VNCContact;
-
-import java.util.ArrayList;
+import com.example.ngoc.vncgiaohngpro.objects.VNCBill;
 
 /**
  * Created by HUNGNTPH04073@FPT.EDU.VN on 6/20/2016.
  */
-public class VNCDatabase extends SQLiteOpenHelper {
-
-    private SQLiteDatabase db;
+public class VNCDatabaseBills extends SQLiteOpenHelper {
 
     public static final String DATA_NAME = "VNCBills";
     /* Bảng hoá đơn */
@@ -39,6 +33,7 @@ public class VNCDatabase extends SQLiteOpenHelper {
     public final static String COL_POINT = "point";
     public final static String COL_NOTE = "note";
     public final static String COL_SEASION = "seasion";
+    public final static String COL_PARTNER = "parner";
     public final static String COL_UPDATE_TIME = "updateTime";
 
     /* Bảng phiên giao hàng */
@@ -49,9 +44,7 @@ public class VNCDatabase extends SQLiteOpenHelper {
     public final static String COL_END_TIME = "end";
 
 
-
-
-    public VNCDatabase(Context context) {
+    public VNCDatabaseBills(Context context) {
         super(context, DATA_NAME, null, 1);
     }
 
@@ -79,6 +72,7 @@ public class VNCDatabase extends SQLiteOpenHelper {
                         + COL_POINT + " INTEGER, "
                         + COL_NOTE + " TEXT, "
                         + COL_SEASION + " TEXT, "
+                        + COL_PARTNER + " TEXT, "
                         + COL_UPDATE_TIME + " INTEGER)";
         String sqlCreat2 =
                 "CREATE TABLE "
@@ -90,13 +84,9 @@ public class VNCDatabase extends SQLiteOpenHelper {
 
         db.execSQL(sqlCreat1);
         db.execSQL(sqlCreat2);
-
-
     }
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
-
 }

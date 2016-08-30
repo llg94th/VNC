@@ -3,7 +3,7 @@ package com.example.ngoc.vncgiaohngpro.objects;
 /**
  * Created by HUNGNTPH04073@FPT.EDU.VN on 6/20/2016.
  */
-public class VNCBills {
+public class VNCBill {
     private int orderNum;
     private String id;
     private String city;
@@ -33,10 +33,10 @@ public class VNCBills {
     public final static int DEAL_CHECKED = 2;
     public final static int DEAL_COMPLETED = 3;
 
-    public VNCBills() {
+    public VNCBill() {
     }
 
-    public VNCBills(int orderNum, String id, String city, String province, String area, String address, String customerName, String phoneNum1, String phoneNum2, String productName, String promotion, String price, String inventoryDays, String employeer, int status, int point, String note, String seasion, long updateTime) {
+    public VNCBill(int orderNum, String id, String city, String province, String area, String address, String customerName, String phoneNum1, String phoneNum2, String productName, String promotion, String price, String inventoryDays, String employeer, int status, int point, String note, String seasion, long updateTime) {
         this.orderNum = orderNum;
         this.id = id;
         this.city = city;

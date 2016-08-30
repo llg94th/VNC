@@ -2,27 +2,20 @@ package com.example.ngoc.vncgiaohngpro.views;
 
 import android.content.ContentProviderOperation;
 import android.content.OperationApplicationException;
-import android.graphics.Color;
 import android.os.RemoteException;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.amulyakhare.textdrawable.TextDrawable;
-import com.amulyakhare.textdrawable.util.ColorGenerator;
 import com.example.ngoc.vncgiaohngpro.R;
 import com.example.ngoc.vncgiaohngpro.VNC;
 import com.example.ngoc.vncgiaohngpro.adapters.ContactAdapter;
-import com.example.ngoc.vncgiaohngpro.databases.VNCDatabase;
 import com.example.ngoc.vncgiaohngpro.databases.VNContactDatabase;
 import com.example.ngoc.vncgiaohngpro.objects.VNCContact;
 import com.example.ngoc.vncgiaohngpro.preference.LoginPreference;
@@ -135,9 +128,7 @@ public class ContactActivity extends AppCompatActivity {
 
             try {
                 getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            } catch (OperationApplicationException e) {
+            } catch (RemoteException | OperationApplicationException e) {
                 e.printStackTrace();
             }
 
