@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">VNC Giao hàng Pro</string>
-
+    <string name="defaul_order_partner_code">160401001217</string>
+    
+    <string name="defaul_order_product_name">1 - COMET - LÒ NƯỚNG ĐIỆN ĐA NĂNG 18L CM6516 + KM - 1 - KM - COMET - NỒI CƠM ĐIỆN 1,2L (TẶNG KÈM LÒ NƯỚNG ĐIỆN ĐA NĂNG COMET CM6516)</string>
+    <string name="defaul_order_promotion">[KM] Bộ 6 chén sứ_Cosy(126821)</string>
+    <string name="defaul_order_ward">Q. HÀ ĐÔNG</string>
+    <string name="defaul_order_customer_name">Q. HÀ ĐÔNG</string>
+    <string name="defaul_order_customer_address">22 NGÕ 70, PHÙ KHOAN 2 PHỐ TRUNG VĂN, P. THANH XUÂN NAM, Q. HÀ ĐÔNG, HÀ NỘI</string>
+    <string name="defaul_order_customer_phone1">0913304350</string>
+    <string name="defaul_order_customer_phone2">01269089409</string>
+    <string name="defaul_order_partner">SJC</string>
+    <string name="defaul_order_status">1</string>
+    <string name="defaul_order_reason">Khách hàng không ưng ý</string>
+    <string name="defaul_order_cod">12000000</string>
+    <string name="defaul_order_note">Ghi chú</string>
 </resources>
