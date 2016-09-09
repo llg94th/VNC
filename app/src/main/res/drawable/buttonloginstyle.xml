@@ -8,5 +8,6 @@
     <!--android:endColor="#FFFFFF"-->
     <!--android:type="linear"-->
     <!--android:angle="270"/>-->
-    <solid android:color="@color/colorLoginButton"></solid>
+    <solid android:color="@color/colorLoginButton"/>
+
 </shape>

@@ -37,24 +37,23 @@ public class RegistrationIntentService extends IntentService {
     }
 
     private void sendRegistrationToServer(String token) {
-        String id = intent.getStringExtra("id");
-        String apiSendToken= VNC.API_SENDTOKEN+id+"&token="+token;
-        Log.d("API SEND",apiSendToken);
-        Ion.with(getBaseContext())
-                .load(apiSendToken)
-                .asJsonObject()
-                .setCallback(new FutureCallback<JsonObject>() {
-                    @Override
-                    public void onCompleted(Exception e, JsonObject result) {
-
-                        int success = Integer.parseInt(result.get("settoken").toString());
-                        if (success==1) {
-                            Log.d("SEND_TOKEN", "SUCCESS");
-                        } else {
-                            Log.d("SEND_TOKEN","LỖi QUEO");
-                        }
-                    }
-                });
+//        String id = intent.getStringExtra("id");
+//        String apiSendToken= VNC.API_SENDTOKEN+id+"&token="+token;
+//        Log.d("API SEND",apiSendToken);
+//        Ion.with(getBaseContext())
+//                .load(apiSendToken)
+//                .asJsonObject()
+//                .setCallback(new FutureCallback<JsonObject>() {
+//                    @Override
+//                    public void onCompleted(Exception e, JsonObject result) {
+//                        int success = Integer.parseInt(result.get("settoken").toString());
+//                        if (success==1) {
+//                            Log.d("SEND_TOKEN", "SUCCESS");
+//                        } else {
+//                            Log.d("SEND_TOKEN","LỖi QUEO");
+//                        }
+//                    }
+//                });
 
     }
 }
